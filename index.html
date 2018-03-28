@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Swiss Made Game League</title>
+        <meta name="description" content="For the first time ever the swiss esports federation organizes a big national championship exclusively for swiss made games. Join us for a lot of fun and competitions!">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#db2140">
+        <link rel="shortcut icon" href="/assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#b91d47">
+        <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        
+        <main>
+            <img id="logo" src="assets/smgl_logo-sun.svg" alt="Logo of the Swiss Made Game League association from the Swiss esports federation with the support of Pro Helvetia and Bity SA">
+            <h1>Countdown until the fun begins :</h1>
+            <div id="countdown-container">
+                <div class="time-container">
+                    <div class="number" id="dn"></div>
+                    <div class="txt" id="dt">Days</div>
+                </div>
+                <div class="round"></div>
+                <div class="time-container">
+                    <div class="number" id="hn"></div>
+                    <div class="txt" id="ht">Hours</div>
+                </div>
+                <div class="round"></div>
+                <div class="time-container">
+                    <div class="number" id="mn"></div>
+                    <div class="txt" id="mt">Minutes</div>
+                </div>
+                <div class="round"></div>
+                <div class="time-container">
+                    <div class="number" id="sn"></div>
+                    <div class="txt" id="st">Seconds</div>
+                </div>
+
+            </div>
+            <img id="fun-smiley" src="assets/fun-smiley.svg" alt="Oki doki simley lol mdr">
+        </main>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto:400,700i');
+
+            body { 
+                padding: 0px;
+                margin: 0px;
+                background-image: url('./assets/bg-15.png');
+                background-size: 30%;
+                background-color: #DC2241; }
+            main { 
+                overflow-x: hidden;
+                width: 100%;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                display: flex; }
+            #logo { width: 80%; max-width: 480px; }
+            #fun-smiley { width: 200px; }
+            h1 { font-family: 'Roboto', sans-serif; font-style: italic; font-weight: 700; color: white; text-transform: uppercase; max-width: 90%; text-align: center; }
+            #countdown-container { 
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center; }
+            .time-container { 
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 7px;
+                align-items: center; }
+            .number { 
+                font-family: 'Roboto', sans-serif;
+                font-style: italic;
+                color: white;
+                font-size: 80px;
+                font-weight: 700; }
+            .txt { 
+                font-family: 'Roboto', sans-serif;
+                font-style: italic;
+                color: white;
+                text-transform: uppercase;
+                font-size: 20px;
+                font-weight: 700; }
+            .round { 
+                border-radius: 50px;
+                background: white;
+                margin: 7px;
+                width: 5px;
+                height: 5px; }
+            @media screen and (max-width: 500px) {
+                .txt { font-size: 12px; }
+                .number { font-size: 50px; }
+            }
+        </style>
+
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("April 2, 2018 20:00:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now an the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the element with id="demo"
+                document.getElementById('dn').innerHTML = days;
+                document.getElementById('hn').innerHTML = hours;
+                document.getElementById('mn').innerHTML = minutes;
+                document.getElementById('sn').innerHTML = seconds;
+
+                // If the count down is finished, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "LET'S RUUUUMMMBLE!!!";
+                }
+            }, 1000);
+        </script>
+
+    </body>
+</html>
